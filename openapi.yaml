@@ -1,0 +1,32 @@
+openapi: "3.0.0"
+components:
+  schemas:
+    message:
+      description: "Сообщение с информацией о пользователе"
+      type: object
+      properties:
+        text:
+          type: string
+        createdAt:
+          type: string
+        username:
+          type: string
+    postMessage:
+      description: "Отправка сообщения"
+      properties:
+        text:
+          type: string
+info:
+  title: Messanger
+  version: 1.0
+  description: Yeah
+paths:
+  /api/v1/messages:
+    post:
+      description: "Отправить сообщение"
+      responses:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#postMessage"
